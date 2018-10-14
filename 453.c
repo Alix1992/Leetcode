@@ -15,3 +15,18 @@
 
 [1,2,3]  =>  [2,3,3]  =>  [3,4,3]  =>  [4,4,4]
 */
+
+class Solution {
+public:
+    int minMoves(vector<int>& nums) {
+        int minInnums=nums[0];
+        int sumnums = nums[0];
+        for(int i=1;i<nums.size();i++)
+        {
+            if(minInnums>nums[i])minInnums=nums[i];
+            sumnums=sumnums+nums[i];
+        }
+        return (sumnums-minInnums*nums.size());
+        
+    }
+};
